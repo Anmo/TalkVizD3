@@ -6,12 +6,12 @@ body {
 }
 
 header {
-    height     : 10%;
+    height     : 5%;
     background : green;
 }
 
 body > div.ink-carousel {
-    height  : 85%;
+    height  : 90%;
     display : none;
 }
 
