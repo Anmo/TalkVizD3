@@ -69,10 +69,10 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Util.Router_1'
 
         switch( e.keyCode ) {
             case 37:
-                this.setPath( [ main , --num ].join( '/' ) );
+                router.setPath( [ main , --num ].join( '/' ) );
                 break;
             case 39:
-                this.setPath( [ main , ++num ].join( '/' ) );
+                router.setPath( [ main , ++num ].join( '/' ) );
                 break;
         }
     });
