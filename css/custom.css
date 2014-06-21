@@ -29,10 +29,13 @@ li.slide {
     height : 100%;
 }
 
+#slides .slide._1 {
+    padding-top : 15%;
+}
+
 img.logo {
     margin     : auto;
     display    : block;
-    margin-top : 5em;
 }
 
 body > div.ink-carousel > ul.stage > li.slide {
