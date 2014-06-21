@@ -25,7 +25,7 @@ body > div.ink-carousel > ul.stage > li.slide {
     display : none;
 }
 
-.stage._1 .slide._1 {
+._1 .stage .slide._1 {
     display : block;
 }
 
