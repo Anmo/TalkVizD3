@@ -1,3 +1,5 @@
+Ink.setPath( 'Ink' , 'http://rawgit.com/Anmo/Ink/develop/src/js/Ink/' );
+
 Ink.requireModules( [ 'Ink.Util.Router_1' ] ,
             function(           Router    ) {
     'use strict';
