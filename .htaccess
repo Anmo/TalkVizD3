@@ -1,0 +1,5 @@
+RewriteCond %{HTTP_USER_AGENT} .*MSIE.\d\.\d*
+RewriteCond %{REQUEST_URI} !index.php
+RewriteRule ^/Anmo/TalkVizD3/(.+)$ http://%{HTTP_HOST}/Anmo/TalkVizD3/#$1 [NE,L,R]
+
+RewriteRule ^/Anmo/TalkVizD3/(.*)$ /Anmo/TalkVizD3/index.php?$1
