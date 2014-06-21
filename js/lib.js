@@ -80,6 +80,6 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Util.Router_1'
                 return;
         }
 
-        router.setPath( [ main , ++num ].join( '/' ) );
+        router.setPath( [ main , num ].join( '/' ) );
     });
 });
