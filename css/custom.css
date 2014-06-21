@@ -10,7 +10,7 @@ header {
     background : green;
 }
 
-body > div {
+body > div.ink-carousel {
     height  : 75%;
     display : none;
 }
