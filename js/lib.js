@@ -1,7 +1,7 @@
 Ink.setPath( 'Ink' , 'http://rawgit.com/Anmo/Ink/develop/src/js/Ink/' );
 
-Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
-            function(          Css    ,           Router    ) {
+Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Util.Router_1' ] ,
+            function(          Css    ,          Ivent    ,            Router    ) {
     'use strict';
 
     var body = document.body;
@@ -35,7 +35,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
             paths : [{
                 path : ':num' ,
                 enter : function( _num ) {
-                    Css.addClassName( slides , '_' + ( numText.innerHTML = num = _num ) );
+                    Css.addClassName( slides , '_' + ( numText.innerHTML = num = parseInt( _num , 10 ) ) );
                 } ,
                 exit  : function( _num ) {
                     Css.removeClassName( slides , '_' + _num );
@@ -55,12 +55,16 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
             paths : [{
                 path : ':num' ,
                 enter : function( _num ) {
-                    Css.addClassName( demos , '_' + ( numText.innerHTML = num = _num ) );
+                    Css.addClassName( demos , '_' + ( numText.innerHTML = num = parseInt( _num , 10 ) ) );
                 } ,
                 exit  : function( _num ) {
                     Css.removeClassName( demos , '_' + _num );
                 }
             }]
         }]
+    });
+
+    Ivent.observe( window , 'keypress' , function( e ) {
+        console.log( e );
     });
 });
