@@ -19,10 +19,10 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
         paths  : [{
             path  : 'slide' ,
             enter : function( _main ) {
-                Css.addClassName( body , main = _main );
+                Css.addClassName( body , ( main = _main ) + 's' );
             } ,
             exit  : function( _main ) {
-                Css.removeClassName( body , _main );
+                Css.removeClassName( body , _main + 's' );
             } ,
             fail  : fail ,
             paths : [{
@@ -32,10 +32,10 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
         } , {
             path  : 'demo' ,
             enter : function( _main ) {
-                Css.addClassName( body , main = _main );
+                Css.addClassName( body , ( main = _main ) + 's' );
             } ,
             exit  : function( _main ) {
-                Css.removeClassName( body , _main );
+                Css.removeClassName( body , _main + 's' );
             } ,
             fail  : fail ,
             paths : [{
