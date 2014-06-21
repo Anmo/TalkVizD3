@@ -21,7 +21,7 @@ body.codes  #codes {
     display : block;
 }
 
-ul.stage {
+div.ink-carousel ul.stage {
     height : 100% !important;
 }
 
