@@ -21,7 +21,7 @@ body.codes  #codes {
     display : block;
 }
 
-body > div > ul > li {
+body > div.ink-carousel > ul.stage > li.slide {
     display : none;
 }
 
