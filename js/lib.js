@@ -64,7 +64,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Util.Router_1'
         }]
     });
 
-    Ivent.observe( window , 'keypress' , function( e ) {
+    Ivent.observe( document , 'keypress' , function( e ) {
         console.log( e );
     });
 });
