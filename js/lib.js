@@ -5,6 +5,8 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
     'use strict';
 
     var body = document.body;
+    var mainText = Ink.i( 'main-text' );
+    var numText = Ink.i( 'num-text' );
 
     var main;
     var num;
@@ -20,6 +22,8 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
             path  : 'slide' ,
             enter : function( _main ) {
                 Css.addClassName( body , ( main = _main ) + 's' );
+
+                mainText.innerHTML = main;
             } ,
             exit  : function( _main ) {
                 Css.removeClassName( body , _main + 's' );
@@ -27,12 +31,16 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
             fail  : fail ,
             paths : [{
                 path : ':num' ,
-                enter : function( _num ) { console.log( 'number:' , num = _num ); }
+                enter : function( _num ) {
+                    munText.innerHTML = num = _num;
+                }
             }]
         } , {
             path  : 'demo' ,
             enter : function( _main ) {
                 Css.addClassName( body , ( main = _main ) + 's' );
+
+                mainText.innerHTML = main;
             } ,
             exit  : function( _main ) {
                 Css.removeClassName( body , _main + 's' );
@@ -40,7 +48,9 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
             fail  : fail ,
             paths : [{
                 path : ':num' ,
-                enter : function( _num ) { console.log( 'number:' , num = _num ); }
+                enter : function( _num ) {
+                    munText.innerHTML = num = _num;
+                }
             }]
         }]
     });
