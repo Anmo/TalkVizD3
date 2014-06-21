@@ -65,8 +65,15 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Util.Router_1'
     });
 
     Ivent.observe( document , 'keydown' , function( e ) {
-        console.log( e );
-        //left = 37
-        //right = 39
+        if ( e.altKey || e.ctrlKey || e.shiftKey ) { return ; }
+
+        switch( e.keyCode ) {
+            case 37:
+                this.setPath( [ main , --num ].join( '/' ) );
+                break;
+            case 39:
+                this.setPath( [ main , ++num ].join( '/' ) );
+                break;
+        }
     });
 });
