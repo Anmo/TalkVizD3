@@ -1,7 +1,5 @@
 html,
-body,
-ul.stage,
-li.slide {
+body {
     position : relative;
     height   : 100%;
     width    : 100%;
@@ -20,6 +18,14 @@ body > div.ink-carousel {
 body.slides #slides,
 body.demos  #demos,
 body.codes  #codes {
+    display : block;
+}
+
+body > div > ul > li {
+    display : none;
+}
+
+.stage._1 .slide._1 {
     display : block;
 }
 
