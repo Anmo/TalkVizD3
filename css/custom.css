@@ -1,5 +1,7 @@
 html,
-body {
+body,
+ul.stage,
+li.slide {
     position : relative;
     height   : 100%;
     width    : 100%;
