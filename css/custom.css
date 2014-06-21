@@ -1,25 +1,26 @@
+html,
 body {
-  position : relative;
-  height   : 100%;
-  width    : 100%;
+    position : relative;
+    height   : 100%;
+    width    : 100%;
 }
 
 header {
-  height     : 20%;
-  background : green;
+    height     : 20%;
+    background : green;
 }
 
 body > div {
-  height  : 75%;
-  display : none;
+    height  : 75%;
+    display : none;
 }
 
 body.slides #slides,
 body.demos  #demos,
 body.codes  #codes {
-  display : block;
+    display : block;
 }
 
 footer {
-  height : 5%;
+    height : 5%;
 }
