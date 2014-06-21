@@ -5,6 +5,9 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
     'use strict';
 
     var body = document.body;
+    var slides = Ink.i( 'slides' );
+    var demos  = Ink.i( 'demos' );
+    var codes  = Ink.i( 'codes' );
     var mainText = Ink.i( 'main-text' );
     var numText = Ink.i( 'num-text' );
 
@@ -32,7 +35,10 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
             paths : [{
                 path : ':num' ,
                 enter : function( _num ) {
-                    numText.innerHTML = num = _num;
+                    Css.addClassName( slides , '_' + ( numText.innerHTML = num = _num ) );
+                } ,
+                exit  : function( _num ) {
+                    Css.removeClassName( slides , '_' + _num );
                 }
             }]
         } , {
@@ -49,7 +55,10 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
             paths : [{
                 path : ':num' ,
                 enter : function( _num ) {
-                    numText.innerHTML = num = _num;
+                    Css.addClassName( demos , '_' + ( numText.innerHTML = num = _num ) );
+                } ,
+                exit  : function( _num ) {
+                    Css.removeClassName( demos , '_' + _num );
                 }
             }]
         }]
