@@ -32,7 +32,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
             paths : [{
                 path : ':num' ,
                 enter : function( _num ) {
-                    munText.innerHTML = num = _num;
+                    numText.innerHTML = num = _num;
                 }
             }]
         } , {
@@ -49,7 +49,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Util.Router_1' ] ,
             paths : [{
                 path : ':num' ,
                 enter : function( _num ) {
-                    munText.innerHTML = num = _num;
+                    numText.innerHTML = num = _num;
                 }
             }]
         }]
