@@ -69,11 +69,17 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Util.Router_1'
 
         switch( e.keyCode ) {
             case 37:
-                router.setPath( [ main , --num ].join( '/' ) );
+                if ( !--num ) { num = 1; }
+
                 break;
             case 39:
-                router.setPath( [ main , ++num ].join( '/' ) );
+                if ( ++num > Infinity ) { num = Infinity; }
+
                 break;
+            default:
+                return;
         }
+
+        router.setPath( [ main , ++num ].join( '/' ) );
     });
 });
