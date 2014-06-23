@@ -1,3 +1,7 @@
+html {
+    font-size : 2em;
+}
+
 html,
 body {
     position : relative;
@@ -10,14 +14,30 @@ header {
     background : green;
 }
 
+body #allSlides,
+body #allCodes,
 body > div.ink-carousel {
     height  : 90%;
     display : none;
 }
 
+body > div.ink-carousel > ul.stage > li.slide {
+    display : none;
+}
+
+body.allSlides #allSlides,
 body.slides #slides,
-body.demos  #demos,
-body.codes  #codes {
+._1 .stage .slide._1,
+._2 .stage .slide._2,
+._3 .stage .slide._3,
+._4 .stage .slide._4,
+._5 .stage .slide._5,
+._6 .stage .slide._6,
+body.allCodes #allCodes,
+body.codes  #codes,
+._1 .stage .code._1,
+._2 .stage .code._2,
+body.demos  #demos {
     display : block;
 }
 
@@ -25,28 +45,49 @@ div.ink-carousel ul.stage {
     height : 100% !important;
 }
 
+#allCodes iframe,
+#allSlides iframe {
+    height                   : 300px;
+    -ms-zoom                 : 0.75;
+    -moz-transform           : scale(0.75);
+    -moz-transform-origin    : 0 0;
+    -o-transform             : scale(0.75);
+    -o-transform-origin      : 0 0;
+    -webkit-transform        : scale(0.75);
+    -webkit-transform-origin : 0 0;
+}
+
 li.slide {
     height : 100%;
 }
 
-#slides .slide._1 {
-    padding-top : 15%;
+body #allSlides,
+#slides .slide,
+body #allCodes,
+#codes .slide {
+    padding-top : 10%;
 }
 
 img.logo {
     margin     : auto;
     display    : block;
 }
-
-body > div.ink-carousel > ul.stage > li.slide {
-    display : none;
+#slides .slide._3 {
+    padding-top : 2.5%;
 }
 
-._1 .stage .slide._1 {
-    display : block;
+#slides ._3 iframe {
+    height      : 95%;
+    margin-left : 2.5%;
+}
+
+#codes pre {
+    margin-left : 20%;
+    overflow-x  : hidden;
 }
 
 footer {
     height  : 5%;
     padding : 0 0.5em;
+    font-size : 0.75em;
 }

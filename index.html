@@ -11,28 +11,102 @@
 
         <link rel='stylesheet' type='text/css' href='http://cdn.ink.sapo.pt/3.0.0/css/ink-flex.min.css'>
         <link rel='stylesheet' type='text/css' href='http://cdn.ink.sapo.pt/3.0.0/css/font-awesome.min.css'>
-        <link rel='stylesheet' type='text/css' href='css/custom.css'>
+        <link rel='stylesheet' type='text/css' href='/TalkVizD3/css/custom.css'>
     </head>
 
     <body>
         <header></header>
 
-        <div id='slides' class='ink-carousel'>
-            <ul class='stage column-group half-gutters'>
+        <div id='allSlides' class='ink-grid'></div>
+
+        <div id='slides' class='ink-carousel align-center'>
+            <ul class='stage column-group'>
                 <li class='slide all-100 _1'>
-                    <img class='logo' src='http://labs.sapo.pt/wp-content/uploads/2013/06/branco-70.png'>
+                    <img class='logo' src='/TalkVizD3/imgs/SAPOLabs_logo.png'>
+
+                    <h2>SAPO Labs Talk – D3.JS</h2>
+
+                    <h3>Bruno Tavares</h3>
+                </li>
+
+                <li class='slide all-100 _2'>
+                    <h2>About Me</h2>
+
+                    <ul class='unstyled'>
+                        <li>Biochemistry</li>
+
+                        <li>Bioinformatics</li>
+
+                        <li>SAPO Labs</li>
+                    </ul>
+                </li>
+
+                <li class='slide all-100 _3'>
+                    <iframe frameborder='0' class='all-45' id='proj1'></iframe>
+                    <iframe frameborder='0' scrolling='no' class='all-45' id='proj2'></iframe>
+                </li>
+
+                <li class='slide all-100 _4'>
+                    <h2>D3.js ❤</h2>
+
+                    <ul class='unstyled'>
+                        <li>Flexible</li>
+
+                        <li>Usefull Methods</li>
+
+                        <li>Examples and Documentation</li>
+                    </ul>
+                </li>
+
+                <li class='slide all-100 _5'>
+                    <h2>D3.js ☠</h2>
+
+                    <ul class='unstyled'>
+                        <li>Learning Curve</li>
+
+                        <li>Mindset</li>
+
+                        <li>With Great Power...</li>
+                    </ul>
+                </li>
+
+                <li class='slide all-100 _6'>
+                    <h2>Lets start</h2>
+
+                    <ul class='unstyled'>
+                        <li><a href='/TalkVizD3/code/1/' data-path='code/1/'>.select</a></li>
+
+                        <li><a href='/TalkVizD3/code/2/' data-path='code/2/'>.data</a></li>
+
+                        <li><a href='/TalkVizD3/code/3/' data-path='code/3/'>.enter</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id='allCodes' class='ink-grid'></div>
+
+        <div id='codes' class='ink-carousel'>
+            <ul class='stage column-group'>
+                <li class='slide all-100 _1'>
+                    <pre>d3.select( element );</pre>
+                </li>
+
+                <li class='slide all-100 _2'>
+                    <pre>d3.select( element )
+    .data( [ 1 , 2 , 3 , ... ] );</pre>
+                </li>
+
+                <li class='slide all-100 _3'>
+                    <pre>d3.select( element )
+    .data( [ 1 , 2 , 3 , ... ] )
+    .enter( );</pre>
                 </li>
             </ul>
         </div>
 
         <div id='demos' class='ink-carousel'>
-            <ul class='stage column-group half-gutters'>
-                <li class='slide all-100 _1'></li>
-            </ul>
-        </div>
-
-        <div id='codes' class='ink-carousel'>
-            <ul class='stage column-group half-gutters'>
+            <ul class='stage column-group'>
                 <li class='slide all-100 _1'></li>
             </ul>
         </div>
@@ -46,6 +120,6 @@
         </footer>
 
         <script type='text/javascript' src='http://rawgit.com/Anmo/Ink/develop/src/js/Ink/1/lib.js'></script>
-        <script type='text/javascript' src='js/lib.js'></script>
+        <script type='text/javascript' src='/TalkVizD3/js/lib.js'></script>
     </body>
 </html>
