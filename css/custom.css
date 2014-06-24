@@ -16,9 +16,14 @@ header {
 
 body #allSlides,
 body #allCodes,
+body #allDemos,
 body > div.ink-carousel {
     height  : 90%;
     display : none;
+}
+
+.link {
+    display : block;
 }
 
 body > div.ink-carousel > ul.stage > li.slide {
@@ -29,16 +34,23 @@ body.allSlides #allSlides,
 body.slides #slides,
 body.allCodes #allCodes,
 body.codes  #codes,
+body.allDemos #allDemos,
 body.demos  #demos,
-._1 .stage .slide._1,
-._2 .stage .slide._2,
-._3 .stage .slide._3,
-._4 .stage .slide._4,
-._5 .stage .slide._5,
-._6 .stage .slide._6,
-._7 .stage .slide._7,
-._8 .stage .slide._8,
-._9 .stage .slide._9 {
+._1 .stage  .slide._1,
+._2 .stage  .slide._2,
+._3 .stage  .slide._3,
+._4 .stage  .slide._4,
+._5 .stage  .slide._5,
+._6 .stage  .slide._6,
+._7 .stage  .slide._7,
+._8 .stage  .slide._8,
+._9 .stage  .slide._9,
+._10 .stage .slide._10,
+._11 .stage .slide._11,
+._12 .stage .slide._12,
+._13 .stage .slide._13,
+._14 .stage .slide._14,
+._15 .stage .slide._15 {
     display : block;
 }
 
@@ -46,15 +58,16 @@ div.ink-carousel ul.stage {
     height : 100% !important;
 }
 
+#allSlides iframe,
 #allCodes iframe,
-#allSlides iframe {
+#allDemos iframe {
     height                   : 300px;
-    -ms-zoom                 : 0.75;
-    -moz-transform           : scale(0.75);
+    -ms-zoom                 : 0.5;
+    -moz-transform           : scale(0.5);
     -moz-transform-origin    : 0 0;
-    -o-transform             : scale(0.75);
+    -o-transform             : scale(0.5);
     -o-transform-origin      : 0 0;
-    -webkit-transform        : scale(0.75);
+    -webkit-transform        : scale(0.5);
     -webkit-transform-origin : 0 0;
 }
 
@@ -77,22 +90,153 @@ img.logo {
 }
 
 #slides .slide._3,
-#codes .slide._7 {
+#codes .slide._7,
+#codes .slide._10,
+#codes .slide._13,
+#codes .slide._14 {
     padding-top : 2.5%;
 }
 
-#slides ._3 iframe {
+#demos .slide._7 {
+    padding-top : 0;
+}
+
+#slides ._3 > * {
     height      : 95%;
     margin-left : 2.5%;
 }
 
-#codes pre {
+#slides ._3 > div {
+    position : relative;
+    overflow : hidden;
+    float    : left;
+}
+
+#slides ._3 div iframe {
+    position : absolute;
+    width    : 100%;
+    height   : 300%;
+    top      : -150%;
+    left     : 0;
+}
+
+#codes pre,
+#codes ul {
     margin-left : 20%;
     overflow-x  : hidden;
+}
+
+#codes .slide._13 pre,
+#codes .slide._14 pre {
+    margin-top : 0;
+    font-size : 0.60em;
+}
+
+#demos .slide._7 svg {
+    width     : 875px;
+    height    : 750px;
+    display   : block;
+    font-size : 0.5em;
 }
 
 footer {
     height  : 5%;
     padding : 0 0.5em;
     font-size : 0.75em;
+}
+
+
+
+/* RADIAL CHART*/
+
+.level {
+   stroke: #444;
+   stroke-opacity:1;
+   stroke-width:0.3px;
+ }
+ g.legend {
+   font-family:sans-serif;
+   font-size:1em;
+   fill:#1F1F1F;
+ }
+
+ text.legend {
+   fill:#444;
+   font-size:.7em;
+ }
+ .middle{
+    fill:#fff;
+ }
+ .axis .legend {
+   font-size : 11px;
+   fill      : #ccc;
+ }
+.axe {
+   stroke:#444;
+   stroke-width:1px;
+   fill:#1F1F1F;
+}
+.point {
+   stroke-width : 3px;
+   stroke: #1F1F1F;
+}
+.club._0 {
+  font-size:1.2em;
+   stroke : #4bf099;
+   fill : #4bf099;
+}
+.club._1 {
+   font-size:1.2em;
+   stroke : #e9b310;
+   fill : #e9b310;
+}
+.club.area {
+   stroke-width : 2px;
+   fill-opacity : 0.1;
+}
+.club.area_0 {
+   fill : #E9B310;
+}
+.club.area_1 {
+   fill : #4BF099;
+}
+text{
+    fill:#888;
+    font-size:1.2em;
+}
+
+.graph,.circleGraph{
+    width:100%;
+    height:800px;
+}
+#clubs{
+    max-width:1400px;
+    margin:0 auto;
+}
+#clubs .ink-dropdown ul.dropdown, #clubs .ink-dropdown ul.dropdown-menu, #clubs .ink-navigation ul.dropdown, #clubs .ink-navigation ul.dropdown-menu{
+    max-width:600px;
+    max-height:200px;
+    width:100%;
+    height:200px;
+    top:6em;
+    left:0%;
+    overflow-y:scroll;
+    background:#F9F9F9;
+    padding:.5em;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow:0 0 3px rgba(0,0,0,.9);
+    -moz-box-shadow:0 0 3px rgba(0,0,0,.9);
+    -webkit-box-shadow:0 0 3px rgba(0,0,0,.9);
+}
+#clubs .ink-dropdown .dropdown-menu .option a{
+    font-size:1.2em;
+}
+#clubs .ink-dropdown .option a:hover,#clubs .ink-dropdown .option a:active{
+    background:#ddd;
+}
+
+#comparometro .ink-dropdown ul.dropdown li.active a, #comparometro .ink-dropdown ul.dropdown-menu li.active a, #comparometro .ink-navigation ul.dropdown li.active a, #comparometro .ink-navigation ul.dropdown-menu li.active a{
+    background:#222;
 }
