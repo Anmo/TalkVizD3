@@ -17,7 +17,9 @@
     <body>
         <header></header>
 
-        <div id='allSlides' class='ink-grid'></div>
+        <div id='allSlides' class='ink-grid'>
+            <a href="https://gitter.im/Anmo/TalkVizD3" rel="nofollow" target="_blank" class="link"><img src="https://badges.gitter.im/Anmo/TalkVizD3.png" alt="Gitter chat" rel="nofollow"></a>
+        </div>
 
         <div id='slides' class='ink-carousel align-center'>
             <ul class='stage column-group'>
@@ -42,7 +44,8 @@
                 </li>
 
                 <li class='slide all-100 _3'>
-                    <iframe frameborder='0' class='all-45' id='proj1'></iframe>
+                    <div class='all-45'><iframe frameborder='0' scrolling='no' id='proj1'></iframe></div>
+                    
                     <iframe frameborder='0' scrolling='no' class='all-45' id='proj2'></iframe>
                 </li>
 
@@ -98,11 +101,31 @@
                     <h2>Demo Time</h2>
 
                     <ul class='unstyled'>
-                        <li><a href='/TalkVizD3/code/7/' data-path='code/7/'>simple</a></li>
+                        <li><a href='/TalkVizD3/code/7/' data-path='code/7/'>Simple</a></li>
 
-                        <li><a href='/TalkVizD3/code/8/' data-path='code/8/'>reset</a></li>
+                        <li><a href='/TalkVizD3/code/8/' data-path='code/8/'>Reset</a></li>
 
-                        <li><a href='/TalkVizD3/code/9/' data-path='code/9/'>It moves</a></li>
+                        <li><a href='/TalkVizD3/code/9/' data-path='code/9/'>Change it</a></li>
+                    </ul>
+                </li>
+
+                <li class='slide all-100 _9'>
+                    <h2>Mix it together</h2>
+
+                    <ul class='unstyled'>
+                        <li><a href='/TalkVizD3/code/10/' data-path='code/10/'>Simple+Reset+Change it</a></li>
+
+                        <li><a href='/TalkVizD3/code/13/' data-path='code/13/'>Animate</a></li>
+
+                        <li><a href='/TalkVizD3/code/14/' data-path='code/14/'>Tween</a></li>
+                    </ul>
+                </li>
+
+                <li class='slide all-100 _10'>
+                    <h2>And Now For Something Completely Different</h2>
+
+                    <ul class='unstyled'>
+                        <li><a href='/TalkVizD3/code/15/' data-path='code/15/'>Radar</a></li>
                     </ul>
                 </li>
             </ul>
@@ -154,23 +177,185 @@ dataElem.enter( )
         .append( 'span' )
         .attr( 'class' , 'demo_1' )
         .text(function( d ) { return d.value; });</pre>
+
                     <h4 class='align-center'><a href='/TalkVizD3/demo/1/' data-path='demo/1/'>See me</a></h4>
                 </li>
 
                 <li class='slide all-100 _8'>
-                    <pre>dataElem.exit( )...</pre>
+                    <pre>d3Elem.selectAll( '.demo_2' )
+                        .data( [ ] ,
+                            function( d ) { return d.Id; })
+                        .exit( )
+                        .remove( );</pre>
+
+                    <h4 class='align-center'><a href='/TalkVizD3/demo/2/' data-path='demo/2/'>See me</a></h4>
                 </li>
 
                 <li class='slide all-100 _9'>
-                    <pre>dataElem...</pre>
+                    <pre>var d3Elem = d3.select( '#demo_3' );
+
+var dataElem = d3Elem.selectAll( '.demo_3' )
+                        .data( [ { Id : 2 , value : 2 } ,
+                            { Id : 1 , value : 4 } , 
+                            { Id : 3 , value : 6 } ] ,
+                            function( d ) { return d.Id; });
+
+dataElem.text(function( d ) { return d.value; });</pre>
+
+                    <h4 class='align-center'><a href='/TalkVizD3/demo/3/' data-path='demo/3/'>See me</a></h4>
+                </li>
+
+                <li class='slide all-100 _10'>
+                    <pre>var funcDemo4 = function( data ) {
+    var d3Elem = d3.select( '#demo_4' );
+
+    var dataElem = d3Elem.selectAll( '.demo_4' )
+                        .data( data ,
+                            function( d ) { return d.Id; });
+
+    dataElem.enter( )
+        .append( 'span' )
+        .attr( 'class' , 'demo_4' );
+
+    dataElem.exit( )
+        .remove( );
+
+    dataElem.text(function( d ) { return d.value; });
+};</pre>
+                </li>
+
+                <li class='slide all-100 _11'>
+                    <pre>funcDemo4([ ]);</pre>
+                </li>
+
+                <li class='slide all-100 _12'>
+                    <pre>funcDemo4([ ... ]);</pre>
+
+                    <h4 class='align-center'><a href='/TalkVizD3/demo/4/' data-path='demo/4/'>See me</a></h4>
+                </li>
+
+                <li class='slide all-100 _13'>
+                    <pre>var funcDemo5 = function( data ) {
+    var d3Elem = d3.select( '#demo_5' );
+
+    var dataElem = d3Elem.selectAll( '.demo_5' )
+                        .data( data ,
+                            function( d ) { return d.Id; });
+
+    dataElem.enter( )
+        .append( 'span' )
+        .attr( 'class' , 'demo_5' )
+        .style( 'opacity' , 0 );
+
+    dataElem.exit( )
+        .transition( )
+        .duration( 1000 )
+        .style( 'opacity' , 0 )
+        .remove( );
+
+    dataElem.text(function( d ) { return d.value; })
+        .transition( )
+        .duration( 1000 )
+        .style( 'opacity' , 1 );
+};</pre>
+
+                    <h4 class='align-center'><a href='/TalkVizD3/demo/5/' data-path='demo/5/'>See me</a></h4>
+                </li>
+
+                <li class='slide all-100 _14'>
+                    <pre>dataElem.enter( )
+    .append( 'span' )
+    .attr( 'class' , 'demo_6' )
+    .text( 0 );
+
+dataElem.exit( )
+    .transition( )
+    .duration( 1000 )
+    .tween( 'text' , function( d ) {
+        var i = d3.interpolateRound( parseInt( this.innerHTML , 10 ) , 0 );
+
+        return function( t ) {
+            this.innerHTML = i( t );
+        };
+    })
+    .remove( );
+
+dataElem.transition( )
+    .duration( 1000 )
+    .tween( 'text' , function( d ) {
+        var i = d3.interpolateRound( parseInt( this.innerHTML , 10 ) , d.value );
+
+        return function( t ) {
+            this.innerHTML = i( t );
+        };
+    });</pre>
+
+                    <h4 class='align-center'><a href='/TalkVizD3/demo/6/' data-path='demo/6/'>See me</a></h4>
+                </li>
+
+                <li class='slide all-100 _15'>
+                    <ul class='unstyled'>
+                        <li>create class</li>
+                        <li>.init => construct svg structure</li>
+                        <li>.update => handle data</li>
+                        <li>.update => "initial" values</li>
+                    </ul>
+
+                    <h4 class='align-center'><a href='/TalkVizD3/demo/7/' data-path='demo/7/'>See me</a></h4>
                 </li>
             </ul>
         </div>
+
+        <div id='allDemos' class='ink-grid'></div>
 
         <div id='demos' class='ink-carousel align-center'>
             <ul class='stage column-group'>
                 <li class='slide all-100 _1'>
                     <div id='demo_1'></div>
+                </li>
+
+                <li class='slide all-100 _2'>
+                    <div id='demo_2'></div>
+
+                    <button id='button_demo_2'>Reset</button>
+                </li>
+
+                <li class='slide all-100 _3'>
+                    <div id='demo_3'></div>
+
+                    <button id='button_demo_3'>Change</button>
+                </li>
+
+                <li class='slide all-100 _4'>
+                    <div id='demo_4'></div>
+
+                    <button id='button_demo_4_1'>Reset</button>
+
+                    <button id='button_demo_4_2'>Change</button>
+                </li>
+
+                <li class='slide all-100 _5'>
+                    <div id='demo_5'></div>
+
+                    <button id='button_demo_5_1'>Reset</button>
+
+                    <button id='button_demo_5_2'>Change</button>
+                </li>
+
+                <li class='slide all-100 _6'>
+                    <div id='demo_6'></div>
+
+                    <button id='button_demo_6_1'>Reset</button>
+
+                    <button id='button_demo_6_2'>Change</button>
+                </li>
+
+                <li class='slide all-100 _7'>
+                    <svg id='demo_7' class='push-center'></svg>
+
+                    <button id='button_demo_7_1'>Reset</button>
+
+                    <button id='button_demo_7_2'>Change</button>
                 </li>
             </ul>
         </div>
