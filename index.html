@@ -71,14 +71,38 @@
                 </li>
 
                 <li class='slide all-100 _6'>
-                    <h2>Lets start</h2>
+                    <h2>Let's start</h2>
 
                     <ul class='unstyled'>
                         <li><a href='/TalkVizD3/code/1/' data-path='code/1/'>.select</a></li>
 
-                        <li><a href='/TalkVizD3/code/2/' data-path='code/2/'>.data</a></li>
+                        <li><a href='/TalkVizD3/code/2/' data-path='code/2/'>.data( Array )</a></li>
 
-                        <li><a href='/TalkVizD3/code/3/' data-path='code/3/'>.enter</a></li>
+                        <li><a href='/TalkVizD3/code/3/' data-path='code/3/'>.data( Array , [ Function ] )</a></li>
+                    </ul>
+                </li>
+
+                <li class='slide all-100 _7'>
+                    <h2>And now what?</h2>
+
+                    <ul class='unstyled'>
+                        <li><a href='/TalkVizD3/code/4/' data-path='code/4/'>.enter</a></li>
+
+                        <li><a href='/TalkVizD3/code/5/' data-path='code/5/'>.exit</a></li>
+
+                        <li><a href='/TalkVizD3/code/6/' data-path='code/6/'>"update"</a></li>
+                    </ul>
+                </li>
+
+                <li class='slide all-100 _8'>
+                    <h2>Demo Time</h2>
+
+                    <ul class='unstyled'>
+                        <li><a href='/TalkVizD3/code/7/' data-path='code/7/'>simple</a></li>
+
+                        <li><a href='/TalkVizD3/code/8/' data-path='code/8/'>reset</a></li>
+
+                        <li><a href='/TalkVizD3/code/9/' data-path='code/9/'>It moves</a></li>
                     </ul>
                 </li>
             </ul>
@@ -89,25 +113,65 @@
         <div id='codes' class='ink-carousel'>
             <ul class='stage column-group'>
                 <li class='slide all-100 _1'>
-                    <pre>d3.select( element );</pre>
+                    <pre>var d3Elem = d3.select( element );
+
+d3Elem.selectAll( class );</pre>
                 </li>
 
                 <li class='slide all-100 _2'>
-                    <pre>d3.select( element )
-    .data( [ 1 , 2 , 3 , ... ] );</pre>
+                    <pre>d3Elem.selectAll( class )
+        .data( [ 1 , 2 , 3 , ... ] );</pre>
                 </li>
 
                 <li class='slide all-100 _3'>
-                    <pre>d3.select( element )
-    .data( [ 1 , 2 , 3 , ... ] )
-    .enter( );</pre>
+                    <pre>var dataElem = d3Elem.selectAll( class )
+                        .data( [ 1 , 2 , 3 , ... ] ,
+                            function( d ) { return d.?; });</pre>
+                </li>
+
+                <li class='slide all-100 _4'>
+                    <pre>dataElem.enter( )...</pre>
+                </li>
+
+                <li class='slide all-100 _5'>
+                    <pre>dataElem.exit( )...</pre>
+                </li>
+
+                <li class='slide all-100 _6'>
+                    <pre>dataElem...</pre>
+                </li>
+
+                <li class='slide all-100 _7'>
+                    <pre>var d3Elem = d3.select( '#demo_1' );
+
+var dataElem = d3Elem.selectAll( '.demo_1' )
+                        .data( [ { Id : 2 , value : 5 } ,
+                            { Id : 1 , value : 7 } , 
+                            { Id : 3 , value : 3 } ] ,
+                            function( d ) { return d.Id; });
+
+dataElem.enter( )
+        .append( 'span' )
+        .attr( 'class' , 'demo_1' )
+        .text(function( d ) { return d.value; });</pre>
+                    <h4 class='align-center'><a href='/TalkVizD3/demo/1/' data-path='demo/1/'>See me</a></h4>
+                </li>
+
+                <li class='slide all-100 _8'>
+                    <pre>dataElem.exit( )...</pre>
+                </li>
+
+                <li class='slide all-100 _9'>
+                    <pre>dataElem...</pre>
                 </li>
             </ul>
         </div>
 
-        <div id='demos' class='ink-carousel'>
+        <div id='demos' class='ink-carousel align-center'>
             <ul class='stage column-group'>
-                <li class='slide all-100 _1'></li>
+                <li class='slide all-100 _1'>
+                    <div id='demo_1'></div>
+                </li>
             </ul>
         </div>
 
@@ -119,6 +183,7 @@
             </span>
         </footer>
 
+        <script type='text/javascript' src='http://d3js.org/d3.v3.min.js' charset='utf-8'></script>
         <script type='text/javascript' src='http://rawgit.com/Anmo/Ink/develop/src/js/Ink/1/lib.js'></script>
         <script type='text/javascript' src='/TalkVizD3/js/lib.js'></script>
     </body>

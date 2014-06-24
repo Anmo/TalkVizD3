@@ -15,23 +15,42 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
     var mainText  = Ink.i( 'main-text' );
     var numText   = Ink.i( 'num-text' );
 
-    var numSlides = 6;
-    var numCodes  = 3;
+    var numSlides = 8;
+    var numCodes  = 9;
+    var numDemos  = 3;
 
     var main;
     var num;
 
     var slide2code = {
-        6 : 1
+        6 : 1 ,
+        7 : 4 ,
+        8 : 7
     };
 
     var code2slide = {
         1 : 6 ,
         2 : 6 ,
-        3 : 6
+        3 : 6 ,
+        4 : 7 ,
+        5 : 7 ,
+        6 : 7 ,
+        7 : 8 ,
+        8 : 8 ,
+        9 : 8
     };
 
-    var demo2code = { };
+    var code2demo = {
+        7 : 1 ,
+        8 : 2 ,
+        9 : 3
+    };
+
+    var demo2code = {
+        1 : 7 ,
+        2 : 8 ,
+        3 : 9
+    };
 
     var fail = function( ) { this.setPath( ( main || 'slide' ) + 's' , true ); };
 
@@ -139,6 +158,24 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
                 path : ':num' ,
                 enter : function( _num ) {
                     Css.addClassName( demos , '_' + ( numText.innerHTML = num = parseInt( _num , 10 ) ) );
+
+                    switch( num ) {
+                        case 1:
+                            var d3Elem = d3.select( '#demo_1' );
+
+                            var dataElem = d3Elem.selectAll( '.demo_1' )
+                                                    .data( [ { Id : 2 , value : 5 } ,
+                                                        { Id : 1 , value : 7 } , 
+                                                        { Id : 3 , value : 3 } ] ,
+                                                        function( d ) { return d.Id; });
+
+                            dataElem.enter( )
+                                    .append( 'span' )
+                                    .attr( 'class' , 'demo_1' )
+                                    .text(function( d ) { return d.value; });
+
+                            break;
+                    }
                 } ,
                 exit  : function( _num ) {
                     Css.removeClassName( demos , '_' + _num );
@@ -153,13 +190,13 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
         var path;
 
         switch( e.keyCode ) {
-            case 37:
+            case 37://left
                 if ( !--num ) { num = 1; }
 
                 path = [ main.replace( /s$/ , '' ) , num , '' ].join( '/' );
 
                 break;
-            case 38:
+            case 38://up
                 if ( main === 'slide' || main === 'slides' || main === 'codes' || main === 'demos' ) { return ; }
 
                 if ( main === 'code' ) {
@@ -173,14 +210,15 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
                 }
 
                 break;
-            case 39:
+            case 39://right
                 if ( ++num > numSlides && main === 'slide' ) { num = numSlides; }
                 if (   num > numCodes  && main === 'code' )  { num = numCodes;  }
+                if (   num > numDemos  && main === 'demo' )  { num = numDemos;  }
 
                 path = [ main.replace( /s$/ , '' ) , num || 1 , '' ].join( '/' );
 
                 break;
-            case 40:
+            case 40://down
                 if ( main === 'demo' ) { return ; }
 
                 if ( main === 'slides' || main === 'codes' || main === 'demos' ) {

@@ -27,17 +27,18 @@ body > div.ink-carousel > ul.stage > li.slide {
 
 body.allSlides #allSlides,
 body.slides #slides,
+body.allCodes #allCodes,
+body.codes  #codes,
+body.demos  #demos,
 ._1 .stage .slide._1,
 ._2 .stage .slide._2,
 ._3 .stage .slide._3,
 ._4 .stage .slide._4,
 ._5 .stage .slide._5,
 ._6 .stage .slide._6,
-body.allCodes #allCodes,
-body.codes  #codes,
-._1 .stage .code._1,
-._2 .stage .code._2,
-body.demos  #demos {
+._7 .stage .slide._7,
+._8 .stage .slide._8,
+._9 .stage .slide._9 {
     display : block;
 }
 
@@ -64,7 +65,9 @@ li.slide {
 body #allSlides,
 #slides .slide,
 body #allCodes,
-#codes .slide {
+#codes .slide,
+body #allDemos,
+#demos .slide {
     padding-top : 10%;
 }
 
@@ -72,7 +75,9 @@ img.logo {
     margin     : auto;
     display    : block;
 }
-#slides .slide._3 {
+
+#slides .slide._3,
+#codes .slide._7 {
     padding-top : 2.5%;
 }
 
