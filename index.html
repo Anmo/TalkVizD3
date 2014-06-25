@@ -12,10 +12,21 @@
         <link rel='stylesheet' type='text/css' href='http://cdn.ink.sapo.pt/3.0.0/css/ink-flex.min.css'>
         <link rel='stylesheet' type='text/css' href='http://cdn.ink.sapo.pt/3.0.0/css/font-awesome.min.css'>
         <link rel='stylesheet' type='text/css' href='/TalkVizD3/css/custom.css'>
+        <link rel='stylesheet' type='text/css' href='/TalkVizD3/css/dreamweaver.css'>
     </head>
 
     <body>
-        <header></header>
+        <header>
+            <nav class="ink-navigation hide-tiny hide-small">
+                <ul class="menu horizontal green push-right">
+                    <li><a href='/TalkVizD3/Slides/' data-path='slides/'>Slides</a></li>
+                    
+                    <li><a href='/TalkVizD3/Codes/' data-path='codes/'>Codes</a></li>
+                    
+                    <li><a href='/TalkVizD3/demos/' data-path='demos/'>Demos</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <div id='allSlides' class='ink-grid'>
             <a href="https://gitter.im/Anmo/TalkVizD3" rel="nofollow" target="_blank" class="link"><img src="https://badges.gitter.im/Anmo/TalkVizD3.png" alt="Gitter chat" rel="nofollow"></a>
@@ -128,6 +139,14 @@
                         <li><a href='/TalkVizD3/code/15/' data-path='code/15/'>Radar</a></li>
                     </ul>
                 </li>
+
+                <li class='slide all-100 _11'>
+                    <h2>May the</h2>
+
+                    <ul class='unstyled'>
+                        <li><a href='/TalkVizD3/code/16/' data-path='code/16/'>Force</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
@@ -136,36 +155,36 @@
         <div id='codes' class='ink-carousel'>
             <ul class='stage column-group'>
                 <li class='slide all-100 _1'>
-                    <pre>var d3Elem = d3.select( element );
+                    <pre><code data-language="javascript">var d3Elem = d3.select( element );
 
-d3Elem.selectAll( class );</pre>
+d3Elem.selectAll( class );</code></pre>
                 </li>
 
                 <li class='slide all-100 _2'>
-                    <pre>d3Elem.selectAll( class )
-        .data( [ 1 , 2 , 3 , ... ] );</pre>
+                    <pre><code data-language="javascript">d3Elem.selectAll( class )
+        .data( [ 1 , 2 , 3 , ... ] );</code></pre>
                 </li>
 
                 <li class='slide all-100 _3'>
-                    <pre>var dataElem = d3Elem.selectAll( class )
+                    <pre><code data-language="javascript">var dataElem = d3Elem.selectAll( class )
                         .data( [ 1 , 2 , 3 , ... ] ,
-                            function( d ) { return d.?; });</pre>
+                            function( d ) { return d.?; });</code></pre>
                 </li>
 
                 <li class='slide all-100 _4'>
-                    <pre>dataElem.enter( )...</pre>
+                    <pre><code data-language="javascript">dataElem.enter( )...</code></pre>
                 </li>
 
                 <li class='slide all-100 _5'>
-                    <pre>dataElem.exit( )...</pre>
+                    <pre><code data-language="javascript">dataElem.exit( )...</code></pre>
                 </li>
 
                 <li class='slide all-100 _6'>
-                    <pre>dataElem...</pre>
+                    <pre><code data-language="javascript">dataElem...</code></pre>
                 </li>
 
                 <li class='slide all-100 _7'>
-                    <pre>var d3Elem = d3.select( '#demo_1' );
+                    <pre><code data-language="javascript">var d3Elem = d3.select( '#demo_1' );
 
 var dataElem = d3Elem.selectAll( '.demo_1' )
                         .data( [ { Id : 2 , value : 5 } ,
@@ -176,23 +195,23 @@ var dataElem = d3Elem.selectAll( '.demo_1' )
 dataElem.enter( )
         .append( 'span' )
         .attr( 'class' , 'demo_1' )
-        .text(function( d ) { return d.value; });</pre>
+        .text(function( d ) { return d.value; });</code></pre>
 
                     <h4 class='align-center'><a href='/TalkVizD3/demo/1/' data-path='demo/1/'>See me</a></h4>
                 </li>
 
                 <li class='slide all-100 _8'>
-                    <pre>d3Elem.selectAll( '.demo_2' )
+                    <pre><code data-language="javascript">d3Elem.selectAll( '.demo_2' )
                         .data( [ ] ,
                             function( d ) { return d.Id; })
                         .exit( )
-                        .remove( );</pre>
+                        .remove( );</code></pre>
 
                     <h4 class='align-center'><a href='/TalkVizD3/demo/2/' data-path='demo/2/'>See me</a></h4>
                 </li>
 
                 <li class='slide all-100 _9'>
-                    <pre>var d3Elem = d3.select( '#demo_3' );
+                    <pre><code data-language="javascript">var d3Elem = d3.select( '#demo_3' );
 
 var dataElem = d3Elem.selectAll( '.demo_3' )
                         .data( [ { Id : 2 , value : 2 } ,
@@ -200,13 +219,13 @@ var dataElem = d3Elem.selectAll( '.demo_3' )
                             { Id : 3 , value : 6 } ] ,
                             function( d ) { return d.Id; });
 
-dataElem.text(function( d ) { return d.value; });</pre>
+dataElem.text(function( d ) { return d.value; });</code></pre>
 
                     <h4 class='align-center'><a href='/TalkVizD3/demo/3/' data-path='demo/3/'>See me</a></h4>
                 </li>
 
                 <li class='slide all-100 _10'>
-                    <pre>var funcDemo4 = function( data ) {
+                    <pre><code data-language="javascript">var funcDemo4 = function( data ) {
     var d3Elem = d3.select( '#demo_4' );
 
     var dataElem = d3Elem.selectAll( '.demo_4' )
@@ -221,21 +240,21 @@ dataElem.text(function( d ) { return d.value; });</pre>
         .remove( );
 
     dataElem.text(function( d ) { return d.value; });
-};</pre>
+};</code></pre>
                 </li>
 
                 <li class='slide all-100 _11'>
-                    <pre>funcDemo4([ ]);</pre>
+                    <pre><code data-language="javascript">funcDemo4([ ]);</code></pre>
                 </li>
 
                 <li class='slide all-100 _12'>
-                    <pre>funcDemo4([ ... ]);</pre>
+                    <pre><code data-language="javascript">funcDemo4([ ... ]);</code></pre>
 
                     <h4 class='align-center'><a href='/TalkVizD3/demo/4/' data-path='demo/4/'>See me</a></h4>
                 </li>
 
                 <li class='slide all-100 _13'>
-                    <pre>var funcDemo5 = function( data ) {
+                    <pre><code data-language="javascript">var funcDemo5 = function( data ) {
     var d3Elem = d3.select( '#demo_5' );
 
     var dataElem = d3Elem.selectAll( '.demo_5' )
@@ -257,13 +276,13 @@ dataElem.text(function( d ) { return d.value; });</pre>
         .transition( )
         .duration( 1000 )
         .style( 'opacity' , 1 );
-};</pre>
+};</code></pre>
 
                     <h4 class='align-center'><a href='/TalkVizD3/demo/5/' data-path='demo/5/'>See me</a></h4>
                 </li>
 
                 <li class='slide all-100 _14'>
-                    <pre>dataElem.enter( )
+                    <pre><code data-language="javascript">dataElem.enter( )
     .append( 'span' )
     .attr( 'class' , 'demo_6' )
     .text( 0 );
@@ -288,20 +307,36 @@ dataElem.transition( )
         return function( t ) {
             this.innerHTML = i( t );
         };
-    });</pre>
+    });</code></pre>
 
                     <h4 class='align-center'><a href='/TalkVizD3/demo/6/' data-path='demo/6/'>See me</a></h4>
                 </li>
 
                 <li class='slide all-100 _15'>
-                    <ul class='unstyled'>
-                        <li>create class</li>
-                        <li>.init => construct svg structure</li>
-                        <li>.update => handle data</li>
-                        <li>.update => "initial" values</li>
-                    </ul>
+                    <pre><code data-language="javascript">var radar = new Radar( '#demo_7' );
+
+radar._setAxis({
+    Jogos               : 180 ,
+    'Golos Sofridos'    : 290 ,
+    'Cartões Vermelhos' : 23 ,
+    'Duplo Amarelos'    : 30 ,
+    'Cartões Amarelos'  : 509 ,
+    'Golos Marcados'    : 400
+});
+
+radar._setData( ... );</code></pre>
 
                     <h4 class='align-center'><a href='/TalkVizD3/demo/7/' data-path='demo/7/'>See me</a></h4>
+                </li>
+
+                <li class='slide all-100 _16'>
+                    <pre><code data-language="javascript">var balls = new Balls( '#demo_8' );
+
+balls.topPlayers( ... );
+
+balls.topTeams( ... );</code></pre>
+
+                    <h4 class='align-center'><a href='/TalkVizD3/demo/8/' data-path='demo/8/'>See me</a></h4>
                 </li>
             </ul>
         </div>
@@ -317,45 +352,53 @@ dataElem.transition( )
                 <li class='slide all-100 _2'>
                     <div id='demo_2'></div>
 
-                    <button id='button_demo_2'>Reset</button>
+                    <button id='button_demo_2' class="ink-button red">Reset</button>
                 </li>
 
                 <li class='slide all-100 _3'>
                     <div id='demo_3'></div>
 
-                    <button id='button_demo_3'>Change</button>
+                    <button id='button_demo_3' class="ink-button green">Change</button>
                 </li>
 
                 <li class='slide all-100 _4'>
                     <div id='demo_4'></div>
 
-                    <button id='button_demo_4_1'>Reset</button>
+                    <button id='button_demo_4_1' class="ink-button red">Reset</button>
 
-                    <button id='button_demo_4_2'>Change</button>
+                    <button id='button_demo_4_2' class="ink-button green">Change</button>
                 </li>
 
                 <li class='slide all-100 _5'>
                     <div id='demo_5'></div>
 
-                    <button id='button_demo_5_1'>Reset</button>
+                    <button id='button_demo_5_1' class="ink-button red">Reset</button>
 
-                    <button id='button_demo_5_2'>Change</button>
+                    <button id='button_demo_5_2' class="ink-button green">Change</button>
                 </li>
 
                 <li class='slide all-100 _6'>
                     <div id='demo_6'></div>
 
-                    <button id='button_demo_6_1'>Reset</button>
+                    <button id='button_demo_6_1' class="ink-button red">Reset</button>
 
-                    <button id='button_demo_6_2'>Change</button>
+                    <button id='button_demo_6_2' class="ink-button green">Change</button>
                 </li>
 
                 <li class='slide all-100 _7'>
-                    <svg id='demo_7' class='push-center'></svg>
+                    <div><svg id='demo_7' class='push-center'></svg></div>
 
-                    <button id='button_demo_7_1'>Reset</button>
+                    <button id='button_demo_7_1' class="ink-button red">Reset</button>
 
-                    <button id='button_demo_7_2'>Change</button>
+                    <button id='button_demo_7_2' class="ink-button green">Change</button>
+                </li>
+
+                <li class='slide all-100 _8'>
+                    <div id='demo_8'></div>
+
+                    <button id='button_demo_8_1' class="ink-button red">Reset</button>
+
+                    <button id='button_demo_8_2' class="ink-button green">Change</button>
                 </li>
             </ul>
         </div>
@@ -367,6 +410,8 @@ dataElem.transition( )
                 <span id='main-text'></span> - <span id='num-text'></span>
             </span>
         </footer>
+
+        <script type='text/javascript' src='/TalkVizD3/js/rainbow-custom.min.js'></script>
 
         <script type='text/javascript' src='http://d3js.org/d3.v3.min.js' charset='utf-8'></script>
         <script type='text/javascript' src='http://rawgit.com/Anmo/Ink/develop/src/js/Ink/1/lib.js'></script>

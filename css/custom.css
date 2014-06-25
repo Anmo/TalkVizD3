@@ -11,7 +11,11 @@ body {
 
 header {
     height     : 5%;
-    background : green;
+    background : #4c9220;
+}
+
+.ink-navigation ul.menu.horizontal li a {
+    line-height : 0.3;
 }
 
 body #allSlides,
@@ -50,7 +54,8 @@ body.demos  #demos,
 ._12 .stage .slide._12,
 ._13 .stage .slide._13,
 ._14 .stage .slide._14,
-._15 .stage .slide._15 {
+._15 .stage .slide._15,
+._16 .stage .slide._16 {
     display : block;
 }
 
@@ -89,15 +94,12 @@ img.logo {
     display    : block;
 }
 
-#slides .slide._3,
-#codes .slide._7,
-#codes .slide._10,
-#codes .slide._13,
-#codes .slide._14 {
+#slides .slide._3 {
     padding-top : 2.5%;
 }
 
-#demos .slide._7 {
+#demos .slide._7,
+#demos .slide._8 {
     padding-top : 0;
 }
 
@@ -120,21 +122,22 @@ img.logo {
     left     : 0;
 }
 
-#codes pre,
-#codes ul {
+#codes pre {
     margin-left : 20%;
     overflow-x  : hidden;
 }
 
-#codes .slide._13 pre,
-#codes .slide._14 pre {
-    margin-top : 0;
-    font-size : 0.60em;
+#demos .slide._7 div,
+#demos .slide._8 div {
+  height : 70%;
+  width  : 100%;
+  margin : 2em 0;
 }
 
-#demos .slide._7 svg {
-    width     : 875px;
-    height    : 750px;
+#demos .slide._7 svg,
+#demos .slide._8 svg {
+    width     : 100%;
+    height    : 100%;
     display   : block;
     font-size : 0.5em;
 }
