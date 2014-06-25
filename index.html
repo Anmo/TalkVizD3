@@ -37,30 +37,18 @@
                 <li class='slide all-100 _1'>
                     <img class='logo' src='/TalkVizD3/imgs/SAPOLabs_logo.png'>
 
-                    <h2>SAPO Labs Talk – D3.JS</h2>
+                    <h2>(Big) Data Visualization with D3.JS</h2>
 
                     <h3>Bruno Tavares</h3>
                 </li>
 
                 <li class='slide all-100 _2'>
-                    <h2>About Me</h2>
-
-                    <ul class='unstyled'>
-                        <li>Biochemistry</li>
-
-                        <li>Bioinformatics</li>
-
-                        <li>SAPO Labs</li>
-                    </ul>
-                </li>
-
-                <li class='slide all-100 _3'>
                     <div class='all-45'><iframe frameborder='0' scrolling='no' id='proj1'></iframe></div>
                     
                     <iframe frameborder='0' scrolling='no' class='all-45' id='proj2'></iframe>
                 </li>
 
-                <li class='slide all-100 _4'>
+                <li class='slide all-100 _3'>
                     <h2>D3.js ❤</h2>
 
                     <ul class='unstyled'>
@@ -72,7 +60,7 @@
                     </ul>
                 </li>
 
-                <li class='slide all-100 _5'>
+                <li class='slide all-100 _4'>
                     <h2>D3.js ☠</h2>
 
                     <ul class='unstyled'>
@@ -84,7 +72,7 @@
                     </ul>
                 </li>
 
-                <li class='slide all-100 _6'>
+                <li class='slide all-100 _5'>
                     <h2>Let's start</h2>
 
                     <ul class='unstyled'>
@@ -96,7 +84,7 @@
                     </ul>
                 </li>
 
-                <li class='slide all-100 _7'>
+                <li class='slide all-100 _6'>
                     <h2>And now what?</h2>
 
                     <ul class='unstyled'>
@@ -108,23 +96,23 @@
                     </ul>
                 </li>
 
-                <li class='slide all-100 _8'>
+                <li class='slide all-100 _7'>
                     <h2>Demo Time</h2>
 
                     <ul class='unstyled'>
-                        <li><a href='/TalkVizD3/code/7/' data-path='code/7/'>Simple</a></li>
+                        <li><a href='/TalkVizD3/code/7/' data-path='code/7/'>Hello</a></li>
 
-                        <li><a href='/TalkVizD3/code/8/' data-path='code/8/'>Reset</a></li>
+                        <li><a href='/TalkVizD3/code/8/' data-path='code/8/'>World</a></li>
 
-                        <li><a href='/TalkVizD3/code/9/' data-path='code/9/'>Change it</a></li>
+                        <li><a href='/TalkVizD3/code/9/' data-path='code/9/'>Reset</a></li>
                     </ul>
                 </li>
 
-                <li class='slide all-100 _9'>
+                <li class='slide all-100 _8'>
                     <h2>Mix it together</h2>
 
                     <ul class='unstyled'>
-                        <li><a href='/TalkVizD3/code/10/' data-path='code/10/'>Simple+Reset+Change it</a></li>
+                        <li><a href='/TalkVizD3/code/10/' data-path='code/10/'>Hello+World+Reset</a></li>
 
                         <li><a href='/TalkVizD3/code/13/' data-path='code/13/'>Animate</a></li>
 
@@ -132,7 +120,7 @@
                     </ul>
                 </li>
 
-                <li class='slide all-100 _10'>
+                <li class='slide all-100 _9'>
                     <h2>And Now For Something Completely Different</h2>
 
                     <ul class='unstyled'>
@@ -140,12 +128,41 @@
                     </ul>
                 </li>
 
-                <li class='slide all-100 _11'>
+                <li class='slide all-100 _10'>
                     <h2>May the</h2>
 
                     <ul class='unstyled'>
                         <li><a href='/TalkVizD3/code/16/' data-path='code/16/'>Force</a></li>
                     </ul>
+                </li>
+
+                <li class='slide all-100 _11'>
+                    <h2>Zelda</h2>
+
+                    <ul class='unstyled'>
+                        <li><a href='http://noticias.sapo.pt/maquinadotempo/'>http://noticias.sapo.pt/maquinadotempo/</a></li>
+
+                        <li><a href='http://grandearea.desporto.sapo.pt/'>http://grandearea.desporto.sapo.pt/</a></li>
+
+                        <li><a href='http://d3js.org/'>http://d3js.org/</a></li>
+
+                        <li><a href='https://gitter.im/Anmo/TalkVizD3'>https://gitter.im/Anmo/TalkVizD3</a></li>
+
+                        <li><a href='mailto:bruno-f-tavares@telecom.pt'>bruno-f-tavares@telecom.pt</a></li>
+
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+
+                        <li>Powered by:<br/><a href='http://ink.sapo.pt/'>http://ink.sapo.pt/</a></li>
+                    </ul>
+                </li>
+
+                <li class='slide all-100 _12'>
+                    <img class='logo' src='/TalkVizD3/imgs/SAPOLabs_logo.png'>
+
+                    <h2>Q&A</h2>
                 </li>
             </ul>
         </div>
@@ -186,40 +203,42 @@ d3Elem.selectAll( class );</code></pre>
                 <li class='slide all-100 _7'>
                     <pre><code data-language="javascript">var d3Elem = d3.select( '#demo_1' );
 
-var dataElem = d3Elem.selectAll( '.demo_1' )
-                        .data( [ { Id : 2 , value : 5 } ,
-                            { Id : 1 , value : 7 } , 
-                            { Id : 3 , value : 3 } ] ,
+var dataElem = d3Elem.selectAll( '.demo_class_1' )
+                        .data( [ { Id : 2 , value : 'H' } ,
+                            { Id : 1 , value : 'E' } , 
+                            { Id : 3 , value : 'L' } , 
+                            { Id : 5 , value : 'L' } , 
+                            { Id : 4 , value : 'O' } ] ,
                             function( d ) { return d.Id; });
 
 dataElem.enter( )
         .append( 'span' )
-        .attr( 'class' , 'demo_1' )
+        .attr( 'class' , 'demo_class_1' )
         .text(function( d ) { return d.value; });</code></pre>
 
                     <h4 class='align-center'><a href='/TalkVizD3/demo/1/' data-path='demo/1/'>See me</a></h4>
                 </li>
 
                 <li class='slide all-100 _8'>
-                    <pre><code data-language="javascript">d3Elem.selectAll( '.demo_2' )
-                        .data( [ ] ,
-                            function( d ) { return d.Id; })
-                        .exit( )
-                        .remove( );</code></pre>
+                    <pre><code data-language="javascript">d3Elem.selectAll( '.demo_class_2' )
+                        .data( [ { Id : 2 , value : 'W' } ,
+                            { Id : 1 , value : 'O' } , 
+                            { Id : 3 , value : 'R' } , 
+                            { Id : 5 , value : 'L' } , 
+                            { Id : 4 , value : 'D' } ] ,
+                            function( d ) { return d.Id; });
+
+dataElem.text(function( d ) { return d.value; });</code></pre>
 
                     <h4 class='align-center'><a href='/TalkVizD3/demo/2/' data-path='demo/2/'>See me</a></h4>
                 </li>
 
                 <li class='slide all-100 _9'>
-                    <pre><code data-language="javascript">var d3Elem = d3.select( '#demo_3' );
-
-var dataElem = d3Elem.selectAll( '.demo_3' )
-                        .data( [ { Id : 2 , value : 2 } ,
-                            { Id : 1 , value : 4 } , 
-                            { Id : 3 , value : 6 } ] ,
-                            function( d ) { return d.Id; });
-
-dataElem.text(function( d ) { return d.value; });</code></pre>
+                    <pre><code data-language="javascript">d3Elem.selectAll( '.demo_3' )
+                        .data( [ ] ,
+                            function( d ) { return d.Id; })
+                        .exit( )
+                        .remove( );</code></pre>
 
                     <h4 class='align-center'><a href='/TalkVizD3/demo/3/' data-path='demo/3/'>See me</a></h4>
                 </li>
@@ -291,10 +310,10 @@ dataElem.exit( )
     .transition( )
     .duration( 1000 )
     .tween( 'text' , function( d ) {
-        var i = d3.interpolateRound( parseInt( this.innerHTML , 10 ) , 0 );
+        var i = d3.interpolateRound( parseInt( this.textContent , 10 ) , 0 );
 
         return function( t ) {
-            this.innerHTML = i( t );
+            this.textContent = i( t );
         };
     })
     .remove( );
@@ -302,10 +321,10 @@ dataElem.exit( )
 dataElem.transition( )
     .duration( 1000 )
     .tween( 'text' , function( d ) {
-        var i = d3.interpolateRound( parseInt( this.innerHTML , 10 ) , d.value );
+        var i = d3.interpolateRound( parseInt( this.textContent , 10 ) , d.value );
 
         return function( t ) {
-            this.innerHTML = i( t );
+            this.textContent = i( t );
         };
     });</code></pre>
 
@@ -316,7 +335,7 @@ dataElem.transition( )
                     <pre><code data-language="javascript">var radar = new Radar( '#demo_7' );
 
 radar._setAxis({
-    Jogos               : 180 ,
+    'Jogos'             : 180 ,
     'Golos Sofridos'    : 290 ,
     'Cartões Vermelhos' : 23 ,
     'Duplo Amarelos'    : 30 ,
@@ -347,18 +366,26 @@ balls.topTeams( ... );</code></pre>
             <ul class='stage column-group'>
                 <li class='slide all-100 _1'>
                     <div id='demo_1'></div>
+
+                    <pre class="align-left"><code>&lt;div id="demo_1">
+    &lt;span class="demo_class_1">H&lt;/span>
+    &lt;span class="demo_class_1">E&lt;/span>
+    &lt;span class="demo_class_1">L&lt;/span>
+    &lt;span class="demo_class_1">L&lt;/span>
+    &lt;span class="demo_class_1">O&lt;/span>
+&lt;/div></code></pre>
                 </li>
 
                 <li class='slide all-100 _2'>
                     <div id='demo_2'></div>
 
-                    <button id='button_demo_2' class="ink-button red">Reset</button>
+                    <button id='button_demo_2' class="ink-button green">Change</button>
                 </li>
 
                 <li class='slide all-100 _3'>
                     <div id='demo_3'></div>
 
-                    <button id='button_demo_3' class="ink-button green">Change</button>
+                    <button id='button_demo_3' class="ink-button red">Reset</button>
                 </li>
 
                 <li class='slide all-100 _4'>

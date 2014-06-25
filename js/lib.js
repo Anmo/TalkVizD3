@@ -30,7 +30,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
     var button_demo_7_1 = Ink.i( 'button_demo_7_1' );
     var button_demo_7_2 = Ink.i( 'button_demo_7_2' );
 
-    var numSlides = 11;
+    var numSlides = 12;
     var numCodes  = 16;
     var numDemos  = 8;
 
@@ -101,31 +101,31 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
     ];
 
     var slide2code = {
-        6  : 1 ,
-        7  : 4 ,
-        8  : 7 ,
-        9  : 10 ,
-        10 : 15 ,
-        11 : 16
+        5  : 1 ,
+        6  : 4 ,
+        7  : 7 ,
+        8  : 10 ,
+        9  : 15 ,
+        10 : 16
     };
 
     var code2slide = {
-        1  : 6 ,
-        2  : 6 ,
-        3  : 6 ,
-        4  : 7 ,
-        5  : 7 ,
-        6  : 7 ,
-        7  : 8 ,
-        8  : 8 ,
-        9  : 8 ,
-        10 : 9 ,
-        11 : 9 ,
-        12 : 9 ,
-        13 : 9 ,
-        14 : 9 ,
-        15 : 10 ,
-        16 : 11
+        1  : 5 ,
+        2  : 5 ,
+        3  : 5 ,
+        4  : 6 ,
+        5  : 6 ,
+        6  : 6 ,
+        7  : 7 ,
+        8  : 7 ,
+        9  : 7 ,
+        10 : 8 ,
+        11 : 8 ,
+        12 : 8 ,
+        13 : 8 ,
+        14 : 8 ,
+        15 : 9 ,
+        16 : 10
     };
 
     var code2demo = {
@@ -150,6 +150,17 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
         6 : 14 ,
         7 : 15 ,
         8 : 16
+    };
+
+    var demo2slide = {
+        1 : 7 ,
+        2 : 7 ,
+        3 : 7 ,
+        4 : 8 ,
+        5 : 8 ,
+        6 : 8 ,
+        7 : 9 ,
+        8 : 10
     };
 
     var fail = function( ) { this.setPath( ( main || 'slide' ) + 's' , true ); };
@@ -193,7 +204,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
                 enter : function( _num ) {
                     Css.addClassName( slides , '_' + ( numText.innerHTML = num = parseInt( _num , 10 ) ) );
 
-                    if ( num === 3 ) {
+                    if ( num === 2 ) {
                         proj1.src = 'http://noticias.sapo.pt/maquinadotempo/grafo.php#date=2013-06-23&entityID=34157&interval=1A&nodeStep=2';
                         proj2.src = 'http://futebol.staging.labs.sapo.pt/TodosMundiais/Estatisticas/TopSelecoes/Eficiencia/';
                     }
@@ -201,7 +212,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
                 exit  : function( _num ) {
                     Css.removeClassName( slides , '_' + _num );
 
-                    if ( num === 3 ) {
+                    if ( num === 2 ) {
                         proj1.removeAttribute( 'src' );
                         proj2.removeAttribute( 'src' );
                     }
@@ -211,7 +222,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
             path  : 'codes' ,
             init  : function( ) {
                 for ( var i = 1; i <= numCodes; i++ ) {
-                    allCodes.innerHTML += '<iframe frameborder="0" scrolling="no" seamless class="all-10" src="/TalkVizD3/code/' + i + '/"></iframe>';
+                    allCodes.innerHTML += '<iframe frameborder="0" scrolling="no" seamless class="all-20" src="/TalkVizD3/code/' + i + '/"></iframe>';
                 }
             } ,
             enter : function( _main ) {
@@ -282,9 +293,14 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
                                 var d3Elem = d3.select( '#demo_2' );
 
                                 var dataElem = d3Elem.selectAll( '.demo_2' )
-                                                        .data( [ ] , function( d ) { return d.Id; })
-                                                        .exit( )
-                                                        .remove( );
+                                                        .data( [ { Id : 2 , value : 'W' } ,
+                                                                { Id : 1 , value : 'O' } , 
+                                                                { Id : 3 , value : 'R' } , 
+                                                                { Id : 5 , value : 'L' } , 
+                                                                { Id : 4 , value : 'D' } ] ,
+                                                        function( d ) { return d.Id; });
+
+                                dataElem.text(function( d ) { return d.value; });
                             });
 
                             break;
@@ -296,12 +312,9 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
                                 var d3Elem = d3.select( '#demo_3' );
 
                                 var dataElem = d3Elem.selectAll( '.demo_3' )
-                                                        .data( [ { Id : 2 , value : 2 } ,
-                                                        { Id : 1 , value : 4 } , 
-                                                        { Id : 3 , value : 6 } ] ,
-                                                        function( d ) { return d.Id; });
-
-                                dataElem.text(function( d ) { return d.value; });
+                                                        .data( [ ] , function( d ) { return d.Id; })
+                                                        .exit( )
+                                                        .remove( );
                             });
 
                             break;
@@ -397,9 +410,11 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
                             var d3Elem = d3.select( '#demo_' + num );
 
                             var dataElem = d3Elem.selectAll( '.demo_' + num )
-                                                    .data( [ { Id : 2 , value : 5 } ,
-                                                        { Id : 1 , value : 7 } , 
-                                                        { Id : 3 , value : 3 } ] ,
+                                                    .data( [ { Id : 2 , value : 'H' } ,
+                                                            { Id : 1 , value : 'E' } , 
+                                                            { Id : 3 , value : 'L' } , 
+                                                            { Id : 5 , value : 'L' } , 
+                                                            { Id : 4 , value : 'O' } ] ,
                                                         function( d ) { return d.Id; });
 
                             dataElem.enter( )
@@ -534,18 +549,20 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
 
                 break;
             case 40://down
-                if ( main === 'demo' ) { return ; }
-
                 if ( main === 'slides' || main === 'codes' || main === 'demos' ) {
                     path = [ main.replace( /s$/ , '' ) , 1 , '' ].join( '/' );
                 } else if ( main === 'slide' ) {
                     if ( !( num in slide2code ) ) { return ; }
 
                     path = [ 'code' , slide2code[ num ] , '' ].join( '/' );
-                } else {
+                } else if ( main === 'code' ) {
                     if ( !( num in code2demo ) ) { return ; }
 
                     path = [ 'demo' , code2demo[ num ] , '' ].join( '/' );
+                } else {
+                    if ( !( num in demo2slide ) ) { return ; }
+
+                    path = [ 'slide' , demo2slide[ num ] , '' ].join( '/' );
                 }
 
                 break;

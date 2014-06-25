@@ -76,6 +76,17 @@ div.ink-carousel ul.stage {
     -webkit-transform-origin : 0 0;
 }
 
+#allCodes iframe {
+    height                   : 200px;
+    -ms-zoom                 : 0.4;
+    -moz-transform           : scale(0.4);
+    -moz-transform-origin    : 0 0;
+    -o-transform             : scale(0.4);
+    -o-transform-origin      : 0 0;
+    -webkit-transform        : scale(0.4);
+    -webkit-transform-origin : 0 0;
+}
+
 li.slide {
     height : 100%;
 }
@@ -86,7 +97,7 @@ body #allCodes,
 #codes .slide,
 body #allDemos,
 #demos .slide {
-    padding-top : 10%;
+    padding-top : 2%;
 }
 
 img.logo {
@@ -94,7 +105,9 @@ img.logo {
     display    : block;
 }
 
-#slides .slide._3 {
+#slides .slide._2,
+#codes .slide._13,
+#codes .slide._14 {
     padding-top : 2.5%;
 }
 
@@ -103,18 +116,18 @@ img.logo {
     padding-top : 0;
 }
 
-#slides ._3 > * {
+#slides ._2 > * {
     height      : 95%;
     margin-left : 2.5%;
 }
 
-#slides ._3 > div {
+#slides ._2 > div {
     position : relative;
     overflow : hidden;
     float    : left;
 }
 
-#slides ._3 div iframe {
+#slides ._2 div iframe {
     position : absolute;
     width    : 100%;
     height   : 300%;
@@ -122,7 +135,10 @@ img.logo {
     left     : 0;
 }
 
-#codes pre {
+#codes pre,
+#demos pre {
+    font-size   : 1em;
+    line-height : 26px;
     margin-left : 20%;
     overflow-x  : hidden;
 }
