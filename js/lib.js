@@ -169,8 +169,8 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
         params  : {
             num : '\\d+'
         } ,
-        baseURL : '/TalkVizD3/' ,
-        mode    : 'path' ,
+        //baseURL : '/TalkVizD3/' ,
+        //mode    : 'path' ,
         onFail  : fail ,
         paths   : [{
             path  : 'slides' ,
