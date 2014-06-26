@@ -206,7 +206,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
 
                     if ( num === 2 ) {
                         proj1.src = 'http://noticias.sapo.pt/maquinadotempo/grafo.php#date=2013-06-23&entityID=34157&interval=1A&nodeStep=2';
-                        proj2.src = 'http://futebol.staging.labs.sapo.pt/TodosMundiais/Estatisticas/TopSelecoes/Eficiencia/';
+                        proj2.src = 'http://grandearea.desporto.sapo.pt/TodosMundiais/Estatisticas/TopSelecoes/Eficiencia/';
                     }
                 } ,
                 exit  : function( _num ) {
