@@ -163,7 +163,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
         8 : 10
     };
 
-    var fail = function( ) { this.setPath( ( main || 'slide' ) + 's' , true ); };
+    var fail = function( ) { this.setPath( ( main || 'slide' ) + 's/' , true ); };
 
     window.router = new Router({
         params  : {
