@@ -99,7 +99,8 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
         init : function( ) {
             var o = this._options;
 
-            this._svg = d3.select( this._element );
+            this._svg = d3.select( this._element )
+                            .append( 'svg' );
 
             this._g = this._svg.append( 'g' )
                                 .attr( 'transform' , 'scale(1) translate(0,0)' );
@@ -247,12 +248,6 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
 
                 var x2 = levelFactor * Math.sin( 0 );
                 var y2 = levelFactor * -Math.cos( 0 );
-
-                this._levels.append( 'svg:circle' )
-                            .attr( 'x' , 0 )
-                            .attr( 'y' , 0 )
-                            .attr( 'r' , levelFactor )
-                            .attr( 'class' , 'level' );
 
                 this._levels.append( 'svg:path' )
                             .attr( 'd' , function( ) {
@@ -410,57 +405,7 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
                     .append( 'svg:circle' )
                     .attr( 'class' , 'point' )
                     .attr( 'cx' , function( p ) { return inner * axeRadX[ p.axis ]; } )
-                    .attr( 'cy' , function( p ) { return inner * axeRadY[ p.axis ]; } )/*
-                    .on( 'mouseover' , function( p ) {
-                        var axe = p.axis;
-                        var parent = this.parentNode;
-                        var pData = parent.__data__;
-                        var sibling = parent.nextSibling || parent.previousSibling;
-                        var data = sibling.__data__;
-                        var s = { };
-                        var c = [ ];
-
-                        if ( p.value / maxValues[ axe ] < 0.1 ) {
-                            for ( var _axe in pData ) {
-                                if ( !pData.hasOwnProperty( _axe ) ) { continue; }
-
-                                if ( _axe === axe || pData[ _axe ] / maxValues[ _axe ] >= 0.1 ) { continue; }
-
-                                c.push({
-                                    team  : 'own' ,
-                                    axis  : _axe ,
-                                    value : pData[ _axe ]
-                                });
-                            }
-
-                            for ( var _axe in data ) {
-                                if ( !data.hasOwnProperty( _axe ) ) { continue; }
-
-                                if ( _axe === axe || data[ _axe ] / maxValues[ _axe ] >= 0.1 ) { continue; }
-
-                                c.push({
-                                    team  : 'other' ,
-                                    axis  : _axe ,
-                                    value : data[ _axe ]
-                                });
-                            }
-                        }
-
-                        for ( var _axe in data ) {
-                            if ( _axe !== axe ) { continue; }
-
-                            s = {
-                                axis  : _axe ,
-                                value : data[ _axe ]
-                            };
-
-                            break;
-                        }
-
-                        var presentSiblingInfo = Math.abs( s.value - p.value ) / maxValues[ axe ] < 0.1;
-
-                        // console.log( p , 'presentCenter' , c , presentSiblingInfo && s );
-                    })*/;
+                    .attr( 'cy' , function( p ) { return inner * axeRadY[ p.axis ]; } );
 
             points.attr( 'r' , 5 )
                     .attr( 'alt' , function( e ) { return e.value + ' ' + e.axis;})
