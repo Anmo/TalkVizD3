@@ -176,7 +176,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
             path  : 'slides' ,
             init  : function( ) {
                 for ( var i = 1; i <= numSlides; i++ ) {
-                    allSlides.innerHTML += '<iframe frameborder="0" scrolling="no" seamless class="all-15" src="/TalkVizD3/slide/' + i + '/"></iframe>';
+                    allSlides.innerHTML += '<iframe frameborder="0" scrolling="no" seamless class="all-15" src="/TalkVizD3/#slide/' + i + '/"></iframe>';
                 }
             } ,
             enter : function( _main ) {
@@ -222,7 +222,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
             path  : 'codes' ,
             init  : function( ) {
                 for ( var i = 1; i <= numCodes; i++ ) {
-                    allCodes.innerHTML += '<iframe frameborder="0" scrolling="no" seamless class="all-20" src="/TalkVizD3/code/' + i + '/"></iframe>';
+                    allCodes.innerHTML += '<iframe frameborder="0" scrolling="no" seamless class="all-20" src="/TalkVizD3/#code/' + i + '/"></iframe>';
                 }
             } ,
             enter : function( _main ) {
@@ -258,7 +258,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
             path  : 'demos' ,
             init  : function( ) {
                 for ( var i = 1; i <= numDemos; i++ ) {
-                    allDemos.innerHTML += '<iframe frameborder="0" scrolling="no" seamless class="all-25" src="/TalkVizD3/demo/' + i + '/"></iframe>';
+                    allDemos.innerHTML += '<iframe frameborder="0" scrolling="no" seamless class="all-25" src="/TalkVizD3/#demo/' + i + '/"></iframe>';
                 }
             } ,
             enter : function( _main ) {
@@ -351,7 +351,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
                             init_7 = true;
 
                             var radar = new Radar( '#demo_7' );
-                            radar._setAxis({
+                            radar.setAxis({
                                 Jogos               : 180 ,
                                 'Golos Sofridos'    : 290 ,
                                 'Cartões Vermelhos' : 23 ,
@@ -363,7 +363,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
                             setTimeout( function( ) { radar._resize( ); } , 0 );
 
                             Ivent.observe( button_demo_7_1 , 'click' , function( ) {
-                                radar._setData([ ]);
+                                radar.setData([ ]);
                             });
 
                             Ivent.observe( button_demo_7_2 , 'click' , function( ) {
@@ -374,7 +374,7 @@ Ink.requireModules( [ 'Ink.Dom.Css_1' , 'Ink.Dom.Event_1' ,  'Ink.Dom.Element_1'
                                 var j = Math.floor( Math.random( ) * l );
                                 var k = Math.floor( Math.random( ) * l );
 
-                                radar._setData( data.filter(function( e , i ){ return ( e.isFirst = i === j ) || i === k; }).sort(function( ) { return Math.random( ); }) );
+                                radar.setData( data.filter(function( e , i ){ return ( e.isFirst = i === j ) || i === k; }).sort(function( ) { return Math.random( ); }) );
                             });
 
                             break;

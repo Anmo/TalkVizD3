@@ -55,6 +55,12 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
                             }
 
                             var bb = this.getBBox( );
+                            var w  = bb.width;
+
+                            d3.select( this )
+                                .select( 'line' )
+                                .attr( 'x1' , - w / 2 )
+                                .attr( 'x2' ,   w / 2 );
 
                             return  'translate(' + ( ( inner + radius + bb.width ) * axeRadX[ axe ] || 0 ) + ',' + ( ( inner + radius + bb.height ) * axeRadY[ axe ] - bb.height / 2 || 0 ) + ')';
                         });
@@ -114,7 +120,7 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
             return this;
         } ,
 
-        _setAxis : function( axisMap ) {
+        setAxis : function( axisMap ) {
             if ( !axisMap ) { return this; }
 
             var o  = this._options;
@@ -155,11 +161,17 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
                                 .append( 'g' )
                                 .attr( 'class' , function( axe , i ) { return 'legend ' + axe.replace( ' ' , '_' ); } );
 
-            nLegend.append( 'rect' )
-                    .attr( 'x' , -50 )
-                    .attr( 'y' , 50 )
-                    .attr( 'width' , 100 )
-                    .attr( 'height' , 40 );
+            nLegend.append( 'circle' )
+                    .attr( 'class' , 'club _0' )
+                    .attr( 'cx' , -40 )
+                    .attr( 'cy' , 60 )
+                    .attr( 'r'  , 25 );
+
+            nLegend.append( 'circle' )
+                    .attr( 'class' , 'club _1' )
+                    .attr( 'cx' , 40 )
+                    .attr( 'cy' , 60 )
+                    .attr( 'r'  , 25 );
 
             nLegend.append( 'text' )
                     .attr( 'text-anchor' , 'middle' )
@@ -167,19 +179,26 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
                     .attr( 'x' , 0 )
                     .text( function( axe , i ) { return axe; });
 
+            nLegend.append( 'line' )
+                    .attr( 'x1' , -0 )
+                    .attr( 'y1' , 30 )
+                    .attr( 'x2' , 0 )
+                    .attr( 'y2' , 30 )
+                    .style( 'stroke' , 'black' );
+
             nLegend.append( 'text' )
-                    .attr( 'text-anchor' , 'start' )
+                    .attr( 'text-anchor' , 'middle' )
                     .attr( 'dy' , '1.5em' )
-                    .attr( 'x' , -50 )
-                    .attr( 'y' , 40 )
+                    .attr( 'x' , -40 )
+                    .attr( 'y' , 37,5 )
                     .attr( 'class' , 'club _0' )
                     .text( '' );
 
             nLegend.append( 'text' )
-                    .attr( 'text-anchor' , 'end' )
+                    .attr( 'text-anchor' , 'middle' )
                     .attr( 'dy' , '1.5em' )
                     .attr( 'x' , 40 )
-                    .attr( 'y' , 40 )
+                    .attr( 'y' , 37,5 )
                     .attr( 'class' , 'club _1' )
                     .text( '' );
 
@@ -208,7 +227,14 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
                         .attr( 'cy' , 0 );
 
             //levels + legends
-            this._levels.selectAll( '.level' ).data( [ ] ).exit( ).remove( );
+            this._levels.selectAll( '.level,.radius' ).data( [ ] ).exit( ).remove( );
+
+            this._levels
+                .append( 'svg:circle' )
+                .attr( 'cx' , 0 )
+                .attr( 'cy' , 0 )
+                .attr( 'r' , radius + inner )
+                .attr( 'class' , 'radius' );
 
             for ( var i = 0; i < levels; i++ ) {
                 var levelFactor = inner + radius * i / levels;
@@ -222,27 +248,34 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
                 var x2 = levelFactor * Math.sin( 0 );
                 var y2 = levelFactor * -Math.cos( 0 );
 
-                for ( var j = 1; j <= totalAxis; j++ ) {
-                    var axe = axis[ j ] || axis[ 0 ];
+                this._levels.append( 'svg:circle' )
+                            .attr( 'x' , 0 )
+                            .attr( 'y' , 0 )
+                            .attr( 'r' , levelFactor )
+                            .attr( 'class' , 'level' );
 
-                    var x1 = x2;
-                    var y1 = y2;
-                    var x2 = levelFactor * axeRadX[ axe ];
-                    var y2 = levelFactor * axeRadY[ axe ];
+                this._levels.append( 'svg:path' )
+                            .attr( 'd' , function( ) {
+                                var d = [ 'M' + x2 + ',' + y2 ];
 
-                    this._levels.append( 'svg:line' )
-                                .attr( 'x1' , x1 )
-                                .attr( 'y1' , y1 )
-                                .attr( 'x2' , x2 )
-                                .attr( 'y2' , y2 )
-                                .attr( 'class' , 'level' );
-                }
+                                for ( var j = 1; j <= totalAxis; j++ ) {
+                                    var axe = axis[ j ] || axis[ 0 ];
+
+                                    x2 = levelFactor * axeRadX[ axe ];
+                                    y2 = levelFactor * axeRadY[ axe ];
+
+                                    d.push( 'L' + x2 + ',' + y2 );
+                                }
+
+                                return d.join( ' ' );
+                            })
+                            .attr( 'class' , 'level' );0
             }
 
             return this;
         } ,
 
-        _setData : function( d ) {
+        setData : function( d ) {
             var self = this;
 
             var o  = this._options;
@@ -278,7 +311,7 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
                         for ( var axe in maxValues ) {
                             if ( !maxValues.hasOwnProperty( axe ) ) { continue; }
 
-                            var elem = self._legend.select( '.' + axe.replace( ' ' , '_' ) + ' ._' + ( p.isFirst ? 0 : 1 ) );
+                            var elem = self._legend.select( '.' + axe.replace( ' ' , '_' ) + ' text._' + ( p.isFirst ? 0 : 1 ) );
 
                             elem.transition( )
                                 .duration( 1000 )
@@ -312,7 +345,7 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
 
                             var v = p[ axe ] || 0;
 
-                            var elem = self._legend.select( '.' + axe.replace( ' ' , '_' ) + ' ._' + ( p.isFirst ? 0 : 1 ) );
+                            var elem = self._legend.select( '.' + axe.replace( ' ' , '_' ) + ' text._' + ( p.isFirst ? 0 : 1 ) );
 
                             elem.transition( )
                                 .duration( 1000 )
@@ -437,12 +470,6 @@ Ink.createModule( 'CdB.UI.Radar' , '1' , [ 'Ink.UI.Common_1' , 'Ink.Dom.Element_
                     .attr( 'cy' , function( e , i ) { return ( inner + radius * e.perc ) * axeRadY[ e.axis ]; } );
 
             return this;
-        } ,
-
-        setData : function( d , a ) {
-            setTimeout( Ink.bind( this._resize , this ) , 4000 );
-
-            return this._setAxis( a )._setData( d );
         }
     };
 

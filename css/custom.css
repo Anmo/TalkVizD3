@@ -167,8 +167,11 @@ footer {
 
 
 /* RADIAL CHART*/
-
+.radius {
+    fill-opacity : 0.25;
+}
 .level {
+    fill-opacity : 0;
    stroke: #444;
    stroke-opacity:1;
    stroke-width:0.3px;
@@ -208,6 +211,10 @@ footer {
    font-size:1.2em;
    stroke : #e9b310;
    fill : #e9b310;
+}
+text.club._0,text.club._1 {
+   stroke : white;
+   fill : white;
 }
 .club.area {
    stroke-width : 2px;
