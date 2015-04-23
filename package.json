@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/anmo/ss15-frogs.git"
+    "url": "https://github.com/anmo/TalkVizD3.git"
   },
   "author": "The Frogs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anmo/ss15-frogs/issues"
+    "url": "https://github.com/anmo/TalkVizD3/issues"
   },
-  "homepage": "https://github.com/anmo/ss15-frogs",
+  "homepage": "https://github.com/anmo/TalkVizD3",
   "devDependencies": {
     "http-server": "^0.8.0"
   }
