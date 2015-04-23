@@ -1,0 +1,23 @@
+{
+  "name": "ozz",
+  "version": "1.0.0",
+  "description": "Think jekyll in the browser",
+  "main": "main.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anmo/ss15-frogs.git"
+  },
+  "author": "The Frogs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anmo/ss15-frogs/issues"
+  },
+  "homepage": "https://github.com/anmo/ss15-frogs",
+  "devDependencies": {
+    "http-server": "^0.8.0"
+  }
+}
